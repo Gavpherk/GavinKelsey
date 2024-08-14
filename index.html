@@ -66,7 +66,7 @@
     <div class="container content">
         <section id="details">
             <h2>Exploit Details</h2>
-            <p><strong>Description:</strong> A root authentication bypass vulnerability exists in the Arris NVG443B router, commonly supplied to customers of Frontier ISP. This issue allows an attacker to gain root-level access to the device's operating system. The vulnerability is present in firmware version 9.3.0h3d36, but is also confirmed by Arris to exist in later versions as well. By exploiting this flaw, an attacker can view filesystem contents, access password hashes of administrative and SSH user accounts, and potentially make modifications to the filesystem and further compromise the device.</p>
+            <p><strong>Description:</strong> A root authentication bypass vulnerability exists in the Arris NVG443B router, commonly supplied to customers of Frontier ISP. This issue allows an attacker to gain root-level access to the device's operating system. The vulnerability is present in firmware version 9.3.0h3d36. By exploiting this flaw, an attacker can view filesystem contents, access password hashes of administrative and SSH user accounts, and potentially make modifications to the filesystem and further compromise the device.</p>
             <p><strong>Technical Details:</strong></p>
             <p>The vulnerability is due to a flaw in the router's login shell, located at /bin/cshell and the defective function is located at RVA 0x165C0. During testing via UART connection, it was discovered that sending the command "^e" terminates the "sdb" task. When the "sdb" task is terminated, the login shell erroneously grants root access without requiring authentication credentials.</p>
             <h3>Steps to Reproduce:</h3>
